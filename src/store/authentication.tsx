@@ -4,7 +4,7 @@ import { TokenUtil } from "../utils/token";
 import { Store } from "./store";
 
 export class AuthenticationStore {
-  store: Store;
+  store!: Store;
   isLoggedIn = false;
   isLoginLoading = false;
   ctx;
