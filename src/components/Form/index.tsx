@@ -7,10 +7,13 @@ const FormSection = () => {
 
   const onFinishForm = async (params: any) => {
     const storedData = localStorage.getItem("data");
-    if (params.email === JSON.parse(storedData)?.email) {
-      setError("Email already exists.");
-      message.error("Submission failed: Email already exists.");
-      return;
+    if (storedData) {
+      const storedEmail = JSON.parse(storedData).email;
+      if (params.email === storedEmail) {
+        setError("Email already exists.");
+        message.error("Submission failed: Email already exists.");
+        return;
+      }
     }
     setError("");
     localStorage.setItem("data", JSON.stringify(params));
