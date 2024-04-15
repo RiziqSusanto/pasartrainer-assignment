@@ -11,11 +11,11 @@ export class AuthenticationStore {
   token = "";
 
   constructor(ctx: Store) {
-    makeAutoObservable(this, {store: false});
+    makeAutoObservable(this, { store: false });
     this.ctx = ctx;
   }
 
-  async login({ email, password }) {
+  async login({ email, password }: { email: string; password: string }) {
     runInAction(() => {
       this.isLoginLoading = true;
     });
