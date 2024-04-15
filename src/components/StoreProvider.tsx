@@ -39,7 +39,7 @@ function initializeStore(initialData = null): Store {
 
 export function useStore(): Store {
   const context = useContext(StoreContext);
-  if (context === {}) {
+  if (!context) {
     throw new Error("useStore must be used within StoreProvider");
   }
 
