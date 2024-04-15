@@ -37,7 +37,7 @@ const ProgramSection = () => {
                   style={{ color: "#534F4F", fontSize: 14 }}
                 />
                 <span className={"ml-2"}>
-                  {dayjs(it.createdAt).format("DD MMM YYYY HH:mm A")}
+                  {dayjs(it.created_at).format("DD MMM YYYY HH:mm A")}
                 </span>
               </p>
               <div className={"mt-2 mb-4"}>
