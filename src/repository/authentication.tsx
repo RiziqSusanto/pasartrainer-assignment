@@ -6,17 +6,25 @@ const url = {
 };
 
 const api = {
-  login({ email, password }) {
+  login({ email, password }: { email: string; password: string }) {
     return http.post(url.login()).send({
       email,
       password,
     });
   },
-  register({ email, password, name }) {
+  register({
+    email,
+    password,
+    name,
+  }: {
+    email: string;
+    password: string;
+    name: string;
+  }) {
     return http.post(url.register()).send({
       email,
       password,
-      name
+      name,
     });
   },
 };
